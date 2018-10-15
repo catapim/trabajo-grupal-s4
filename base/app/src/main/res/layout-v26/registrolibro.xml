@@ -89,12 +89,12 @@
                 android:layout_marginEnd="153dp"
                 android:ems="10"
                 android:hint="@string/ej_libro_autor"
-                android:importantForAutofill="no"
                 android:inputType="text"
                 app:layout_constraintBottom_toTopOf="@+id/libro_ano_publicacion"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/libro_autor" />
+                app:layout_constraintTop_toBottomOf="@+id/libro_autor"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/libro_ano_publicacion"
