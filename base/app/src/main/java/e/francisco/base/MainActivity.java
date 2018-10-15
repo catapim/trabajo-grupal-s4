@@ -24,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
     TextView show_titulo, show_autor, show_publicacion, show_calificacion;
 
     private ArrayList<String> libros = new ArrayList<String>();
-        @Override
+
+    @Override
         protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registrolibro);
         final EditText input_titulo = (EditText) findViewById(R.id.input_titulo);
@@ -40,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("holap");
         btn_guardar_libro = (Button) findViewById(R.id.btn_guardar_libro);
         btn_guardar_libro.setOnClickListener(new View.OnClickListener() {
+
+            private View view;
+
+            /** Called when the user taps the Send button */
+
+        public void sendMessage(View view) {
+            // Do something in response to button
+        }
             @Override
             public void onClick(View v) {
                 titulo = input_titulo.getText().toString();
@@ -53,7 +63,15 @@ public class MainActivity extends AppCompatActivity {
                 showToast(String.valueOf(calificacion));
             }
         });
+
+
+
     }
+
+
+
+
+
 
     private void showToast(String text) {
             Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
@@ -62,5 +80,9 @@ public class MainActivity extends AppCompatActivity {
            // show_publicacion.setText(publicacion);
             //show_calificacion.setText(calificacion);
     }
+
+
+
+
 }
 
