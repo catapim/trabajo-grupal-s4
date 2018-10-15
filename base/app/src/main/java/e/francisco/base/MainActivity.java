@@ -13,8 +13,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    String titulo, autor, publicacion, calificacion;
+    String titulo, autor;
+    int publicacion, calificacion;
     EditText input_titulo;
+    EditText input_autor;
+    EditText input_publicacion;
+    EditText input_calificacion;
     Button btn_guardar_libro;
     private ArrayList<String> libros = new ArrayList<String>();
 
@@ -24,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registrolibro);
         final EditText input_titulo = (EditText) findViewById(R.id.input_titulo);
-        //EditText in_autor = (EditText) findViewById(R.id.input_autor);
-        //EditText in_publicacion = (EditText) findViewById(R.id.input_publicacion);
-        //EditText in_calificacion = (EditText) findViewById(R.id.input_calificacion);
+        final EditText input_autor = (EditText) findViewById(R.id.input_autor);
+        final EditText input_publicacion = (EditText) findViewById(R.id.input_publicacion);
+        final EditText input_calificacion = (EditText) findViewById(R.id.input_calificacion);
         libros = new ArrayList<String>();
         System.out.println("holap");
         btn_guardar_libro = (Button) findViewById(R.id.btn_guardar_libro);
@@ -34,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 titulo = input_titulo.getText().toString();
+                autor = input_autor.getText().toString();
+                publicacion = Integer.valueOf(input_publicacion.getText().toString());
+                calificacion = Integer.valueOf(input_calificacion.getText().toString());
             }
         });
         }
