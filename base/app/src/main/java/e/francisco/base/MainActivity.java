@@ -61,16 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 showToast(String.valueOf(calificacion));
             }
         });
-
-
-
-
     }
-
-
-
-
-
 
     private void showToast(String text) {
             Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
@@ -79,9 +70,5 @@ public class MainActivity extends AppCompatActivity {
            // show_publicacion.setText(publicacion);
             //show_calificacion.setText(calificacion);
     }
-
-
-
-
 }
 
