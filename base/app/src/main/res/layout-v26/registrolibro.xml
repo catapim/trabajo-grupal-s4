@@ -136,4 +136,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/libro_titulo" />
+
+    <Button
+        android:id="@+id/btn_guardar_libro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="262dp"
+        android:layout_marginBottom="43dp"
+        android:text="@string/guardar_libros"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_calificacion" />
 </android.support.constraint.ConstraintLayout>
