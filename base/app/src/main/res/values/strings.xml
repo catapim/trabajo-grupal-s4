@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">base</string>
+    <string name="app_name">Biblioteca personal</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -9,7 +9,29 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="nombre_usuario">This email address is invalid</string>
+
+    <!-- strings de idea cata -->
+
+    <!-- TITULARES -->
+    <string name="titulo_pantalla_registro">Registra aquí tus libros</string>
+
+
+    <!-- DATOS LIBRO -->
+    <string name="libro_titulo">Título del libro</string>
+    <string name="libro_autor">Nombre de autor</string>
+    <string name="libro_ano_publicacion">Año de publicación</string>
+    <string name="libro_calificacion">Calificacion (de 1 a 5)</string>
+    <string name="ej_libro_titulo">ej. Harry Potter</string>
+    <string name="ej_libro_autor">Ej. JK Rowling</string>
+    <string name="ej_libro_ano_publicacion">ej. 1990</string>
+    <string name="ej_libro_calificacion">ej. 5</string>
+
+    <!-- REGISTRO USUARIO -->
+    <string name="usuario_nombre">Ingresa tu nombre</string>
+    <string name="usuario_registra">Registrate y entra</string>
+
+    <!-- INFO LIBRO -->
+    <string name="ver_libros">Mira tus libros</string>
 </resources>
