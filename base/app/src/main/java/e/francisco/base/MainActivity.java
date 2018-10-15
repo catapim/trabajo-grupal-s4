@@ -9,20 +9,21 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    String titulo, autor;
-    int publicacion, calificacion;
     EditText input_titulo;
     EditText input_autor;
     EditText input_publicacion;
     EditText input_calificacion;
+    String titulo, autor;
+    int publicacion, calificacion;
     Button btn_guardar_libro;
+
     private ArrayList<String> libros = new ArrayList<String>();
-
-
         @Override
         protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,15 +42,17 @@ public class MainActivity extends AppCompatActivity {
                 autor = input_autor.getText().toString();
                 publicacion = Integer.valueOf(input_publicacion.getText().toString());
                 calificacion = Integer.valueOf(input_calificacion.getText().toString());
+
+                showToast(titulo);
+                showToast(autor);
+                showToast(String.valueOf(publicacion));
+                showToast(String.valueOf(calificacion));
             }
         });
-        }
+    }
 
-
-      //  }
-  //  )
-
-
-
+    private void showToast(String text) {
+            Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+    }
 }
 
