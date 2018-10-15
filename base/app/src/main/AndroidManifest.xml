@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".verLibros"
+            android:name=".VerLibrosActivity"
             android:label="@string/title_activity_ver_libros"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
