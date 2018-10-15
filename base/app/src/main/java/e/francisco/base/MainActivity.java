@@ -1,25 +1,16 @@
 package e.francisco.base;
 
 import android.content.Context;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
-
-
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,83 +23,59 @@ public class MainActivity extends AppCompatActivity {
     Button btn_ver_libro;
     TextView show_titulo, show_autor, show_publicacion, show_calificacion;
 
-    private ArrayList<String> libros = new ArrayList<String>();
+    public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/aaBiblioteca";
     private Context context;
 
-    public MainActivity() {
-    }
-
     @Override
-        protected void onCreate(Bundle savedInstanceState) {
-
+        protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registrolibro);
+
         final EditText input_titulo = (EditText) findViewById(R.id.input_titulo);
         final EditText input_autor = (EditText) findViewById(R.id.input_autor);
         final EditText input_publicacion = (EditText) findViewById(R.id.input_publicacion);
         final EditText input_calificacion = (EditText) findViewById(R.id.input_calificacion);
-        libros = new ArrayList<String>();
 
-        show_titulo = (TextView) findViewById(R.id.show_titulo);
-        show_autor = (TextView) findViewById(R.id.show_autor);
+        //show_titulo = (TextView) findViewById(R.id.show_titulo);
+        //show_autor = (TextView) findViewById(R.id.show_autor);
 
-        System.out.println("holap");
+        //System.out.println("holap");
+        File dir = new File(path);
+        dir.mkdirs();
+
         btn_guardar_libro = (Button) findViewById(R.id.btn_guardar_libro);
         btn_guardar_libro.setOnClickListener(new View.OnClickListener() {
-
             private View view;
-
             @Override
             public void onClick(View v) {
-                titulo = input_titulo.getText().toString();
-                autor = input_autor.getText().toString();
-                publicacion = input_publicacion.getText().toString();
-                calificacion = input_calificacion.getText().toString();
+                //titulo = input_titulo.getText().toString();
+                //autor = input_autor.getText().toString();
+              //  publicacion = input_publicacion.getText().toString();
+             //   calificacion = input_calificacion.getText().toString();
+                File file = new File (path+"/libros.txt");
+                String[] saveText = String.valueOf(input_titulo.getText().toString()).split(System.getProperty("comma.separator"));
+                input_titulo.setText("");
+                Toast.makeText(getApplicationContext(), "Guardado",Toast.LENGTH_SHORT).show();
 
-                //showToast(titulo);
-                //showToast(autor);
-               // showToast(String.valueOf(publicacion));
-                //showToast(String.valueOf(calificacion));
-
+                Save (file, saveText);
             }
         });
 
         btn_ver_libro = (Button) findViewById(R.id.btn_ver_libro);
         btn_ver_libro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openVerLibrosActivity();
-            }
-        });
-    }
 
-    //private void writeToFile(String data,Context context) {
-    //    try {
-    //        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("config.txt", Context.MODE_PRIVATE));
-    //        outputStreamWriter.write(data);
-    //        outputStreamWriter.close();
-     //   } catch (FileNotFoundException e) {
-    //        e.printStackTrace();
-     //   } catch (IOException e) {
-     //       Log.e("Exception", "File write failed: " + e.toString());
-     //   }
-   // }
-
-    public void onStart() {
-        super.onStart();
-        String filename = "myfile";
-        String fileContents = "Hello world!";
-        FileOutputStream outputStream;
-        File file = new File(context.getFilesDir(), filename);
-
-        try {
-            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-            outputStream.write(fileContents.getBytes());
-            outputStream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        @Override
+        public void onClick(View v) {
+            openVerLibrosActivity();
         }
+    });
+}
+
+
+
+    private void Save(File file, String[] saveText) {
     }
+
 
     public void  openVerLibrosActivity(){
         Intent intent = new Intent(this, VerLibrosActivity.class);
