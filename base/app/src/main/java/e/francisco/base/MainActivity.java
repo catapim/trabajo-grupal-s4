@@ -19,8 +19,7 @@ public class MainActivity extends AppCompatActivity {
     EditText input_autor;
     EditText input_publicacion;
     EditText input_calificacion;
-    String titulo, autor;
-    int publicacion, calificacion;
+    String titulo, autor, publicacion, calificacion;
     Button btn_guardar_libro;
     TextView show_titulo, show_autor, show_publicacion, show_calificacion;
 
@@ -45,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 titulo = input_titulo.getText().toString();
                 autor = input_autor.getText().toString();
-                publicacion = Integer.valueOf(input_publicacion.getText().toString());
-                calificacion = Integer.valueOf(input_calificacion.getText().toString());
+                publicacion = input_publicacion.getText().toString();
+                calificacion = input_calificacion.getText().toString();
 
                 showToast(titulo);
                 showToast(autor);
