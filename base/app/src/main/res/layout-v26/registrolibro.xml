@@ -13,13 +13,15 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/titulo_pantalla_registro"
@@ -117,7 +119,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/ej_libro_ano_publicacion"
-                android:inputType="number"
+                android:inputType="text"
                 app:layout_constraintBottom_toTopOf="@+id/libro_calificacion"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/libro_ano_publicacion" />
@@ -135,13 +137,13 @@
 
             <EditText
                 android:id="@+id/input_calificacion"
-                android:layout_marginStart="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/ej_libro_calificacion"
-                android:inputType="number" />
+                android:inputType="text" />
 
             <Button
                 android:id="@+id/btn_guardar_libro"
@@ -176,25 +178,30 @@
                 android:id="@+id/show_titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
                 tools:layout_editor_absoluteY="559dp" />
 
             <TextView
                 android:id="@+id/show_autor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
                 tools:layout_editor_absoluteY="559dp" />
 
             <TextView
                 android:id="@+id/show_calificacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
                 tools:layout_editor_absoluteY="559dp" />
 
             <TextView
                 android:id="@+id/show_publicacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout_editor_absoluteY="559dp" />
+                tools:layout_editor_absoluteY="559dp"
+                android:layout_marginStart="100dp" />
+
 
         </LinearLayout>
     </ScrollView>

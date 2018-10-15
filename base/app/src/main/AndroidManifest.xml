@@ -26,5 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".verLibros"
+            android:label="@string/title_activity_ver_libros"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
+
 </manifest>

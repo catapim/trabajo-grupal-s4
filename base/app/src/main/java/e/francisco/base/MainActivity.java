@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
             show_titulo.setText(titulo);
             show_autor.setText(autor);
-            show_publicacion.setText(publicacion);
-            show_calificacion.setText(calificacion);
+           // show_publicacion.setText(publicacion);
+            //show_calificacion.setText(calificacion);
     }
 }
 

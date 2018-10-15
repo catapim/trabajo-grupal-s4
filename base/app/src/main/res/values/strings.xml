@@ -35,4 +35,5 @@
     <!-- INFO LIBRO -->
     <string name="ver_libros">Mira tus libros</string>
     <string name="guardar_libros">Guardar</string>
+    <string name="title_activity_ver_libros">verLibros</string>
 </resources>
