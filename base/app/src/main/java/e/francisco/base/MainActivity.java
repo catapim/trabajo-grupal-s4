@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText input_calificacion;
     String titulo, autor, publicacion, calificacion;
     Button btn_guardar_libro;
+    Button btn_ver_libro;
     TextView show_titulo, show_autor, show_publicacion, show_calificacion;
 
     private ArrayList<String> libros = new ArrayList<String>();
@@ -45,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
             private View view;
 
-            /** Called when the user taps the Send button */
-
 
             @Override
             public void onClick(View v) {
@@ -61,6 +61,19 @@ public class MainActivity extends AppCompatActivity {
                 showToast(String.valueOf(calificacion));
             }
         });
+
+        btn_ver_libro = (Button) findViewById(R.id.btn_ver_libro);
+        btn_ver_libro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openVerLibrosActivity();
+            }
+        });
+    }
+
+    public void  openVerLibrosActivity(){
+        Intent intent = new Intent(this, VerLibrosActivity.class);
+        startActivity(intent);
     }
 
     private void showToast(String text) {
