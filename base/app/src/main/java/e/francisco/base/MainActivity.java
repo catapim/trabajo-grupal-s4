@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     String titulo, autor;
     int publicacion, calificacion;
     Button btn_guardar_libro;
+    TextView show_titulo, show_autor, show_publicacion, show_calificacion;
 
     private ArrayList<String> libros = new ArrayList<String>();
         @Override
@@ -33,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         final EditText input_publicacion = (EditText) findViewById(R.id.input_publicacion);
         final EditText input_calificacion = (EditText) findViewById(R.id.input_calificacion);
         libros = new ArrayList<String>();
+
+        show_titulo = (TextView) findViewById(R.id.show_titulo);
+        show_autor = (TextView) findViewById(R.id.show_autor);
+
         System.out.println("holap");
         btn_guardar_libro = (Button) findViewById(R.id.btn_guardar_libro);
         btn_guardar_libro.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void showToast(String text) {
             Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+            show_titulo.setText(titulo);
+            show_autor.setText(autor);
+            show_publicacion.setText(publicacion);
+            show_calificacion.setText(calificacion);
     }
 }
 

@@ -8,165 +8,207 @@
     tools:context=".MainActivity">
 
 
-
-    <TextView
-        android:id="@+id/titulo_pantalla_registro"
-        android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/titulo_pantalla_registro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/libro_titulo"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="200dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/libro_titulo"
-        app:layout_constraintBottom_toTopOf="@+id/input_titulo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
-
-    <TextView
-        android:id="@+id/libro_autor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="262dp"
-        android:text="@string/libro_autor"
-        app:layout_constraintBottom_toTopOf="@+id/input_autor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_titulo" />
-
-    <TextView
-        android:id="@+id/libro_ano_publicacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="250dp"
-        android:text="@string/libro_ano_publicacion"
-        app:layout_constraintBottom_toTopOf="@+id/input_publicacion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_autor" />
-
-    <TextView
-        android:id="@+id/libro_calificacion"
-        android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/libro_calificacion"
-        app:layout_constraintBottom_toTopOf="@+id/input_calificacion"
-        app:layout_constraintEnd_toStartOf="@+id/input_calificacion"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_publicacion" />
-
-    <EditText
-        android:id="@+id/input_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="153dp"
-        android:layout_marginBottom="10dp"
-        android:autofillHints="@string/libro_titulo"
-        android:ems="10"
-        android:hint="@string/ej_libro_titulo"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/libro_autor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/libro_titulo" />
-
-
-    <EditText
-        android:id="@+id/input_autor"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="153dp"
-        android:ems="10"
-        android:hint="@string/ej_libro_autor"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/libro_ano_publicacion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/libro_autor"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/input_publicacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="31dp"
-        android:ems="10"
-        android:hint="@string/ej_libro_ano_publicacion"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/libro_calificacion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/libro_ano_publicacion"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/input_calificacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="122dp"
-        android:ems="10"
-        android:hint="@string/ej_libro_calificacion"
-        android:inputType="number"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:isScrollContainer="true"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/libro_calificacion"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btn_guardar_libro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="262dp"
-        android:layout_marginBottom="43dp"
-        android:text="@string/guardar_libros"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_calificacion"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/titulo_pantalla_registro"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/titulo_pantalla_registro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_ver_libro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
-        android:layout_marginEnd="262dp"
-        android:text="@string/ver_libros"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_guardar_libro" />
+        <TextView
+            android:id="@+id/libro_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="200dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/libro_titulo"
+            app:layout_constraintBottom_toTopOf="@+id/input_titulo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <EditText
+            android:id="@+id/input_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="153dp"
+            android:layout_marginBottom="10dp"
+            android:autofillHints="@string/libro_titulo"
+            android:ems="10"
+            android:hint="@string/ej_libro_titulo"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/libro_autor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/libro_titulo" />
+
+        <TextView
+            android:id="@+id/libro_autor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="262dp"
+            android:text="@string/libro_autor"
+            app:layout_constraintBottom_toTopOf="@+id/input_autor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_titulo" />
+
+        <EditText
+            android:id="@+id/input_autor"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="153dp"
+            android:ems="10"
+            android:hint="@string/ej_libro_autor"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/libro_ano_publicacion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/libro_autor" />
+
+        <TextView
+            android:id="@+id/libro_ano_publicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="250dp"
+            android:text="@string/libro_ano_publicacion"
+            app:layout_constraintBottom_toTopOf="@+id/input_publicacion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_autor" />
+
+        <EditText
+            android:id="@+id/input_publicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="31dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/ej_libro_ano_publicacion"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/libro_calificacion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/libro_ano_publicacion" />
+
+        <TextView
+            android:id="@+id/libro_calificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/libro_calificacion"
+            app:layout_constraintBottom_toTopOf="@+id/input_calificacion"
+            app:layout_constraintEnd_toStartOf="@+id/input_calificacion"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_publicacion" />
+
+        <EditText
+            android:id="@+id/input_calificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="122dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/ej_libro_calificacion"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/libro_calificacion" />
+
+        <Button
+            android:id="@+id/btn_guardar_libro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="262dp"
+            android:layout_marginBottom="43dp"
+            android:text="@string/guardar_libros"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_calificacion"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btn_ver_libro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="262dp"
+            android:text="@string/ver_libros"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_guardar_libro" />
+
+        <TextView
+            android:id="@+id/show_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="559dp" />
+
+        <TextView
+            android:id="@+id/show_autor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="559dp" />
+
+        <TextView
+            android:id="@+id/show_publicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="559dp" />
+
+        <TextView
+            android:id="@+id/show_calificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="559dp" />
+
+    </LinearLayout>
+    </ScrollView>
+
+
 </android.support.constraint.ConstraintLayout>
