@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
             private View view;
 
-
             @Override
             public void onClick(View v) {
                 titulo = input_titulo.getText().toString();
