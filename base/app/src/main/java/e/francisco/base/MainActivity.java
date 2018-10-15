@@ -14,7 +14,9 @@ import android.widget.Toast;
 import android.content.Intent;
 
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
@@ -31,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
     TextView show_titulo, show_autor, show_publicacion, show_calificacion;
 
     private ArrayList<String> libros = new ArrayList<String>();
+    private Context context;
+
+    public MainActivity() {
+    }
 
     @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +65,11 @@ public class MainActivity extends AppCompatActivity {
                 publicacion = input_publicacion.getText().toString();
                 calificacion = input_calificacion.getText().toString();
 
-                showToast(titulo);
-                showToast(autor);
-                showToast(String.valueOf(publicacion));
-                showToast(String.valueOf(calificacion));
+                //showToast(titulo);
+                //showToast(autor);
+               // showToast(String.valueOf(publicacion));
+                //showToast(String.valueOf(calificacion));
+
             }
         });
 
@@ -73,19 +80,33 @@ public class MainActivity extends AppCompatActivity {
                 openVerLibrosActivity();
             }
         });
-
-
     }
 
-    private void writeToFile(String data,Context context) {
+    //private void writeToFile(String data,Context context) {
+    //    try {
+    //        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("config.txt", Context.MODE_PRIVATE));
+    //        outputStreamWriter.write(data);
+    //        outputStreamWriter.close();
+     //   } catch (FileNotFoundException e) {
+    //        e.printStackTrace();
+     //   } catch (IOException e) {
+     //       Log.e("Exception", "File write failed: " + e.toString());
+     //   }
+   // }
+
+    public void onStart() {
+        super.onStart();
+        String filename = "myfile";
+        String fileContents = "Hello world!";
+        FileOutputStream outputStream;
+        File file = new File(context.getFilesDir(), filename);
+
         try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("config.txt", Context.MODE_PRIVATE));
-            outputStreamWriter.write(data);
-            outputStreamWriter.close();
-        } catch (FileNotFoundException e) {
+            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream.write(fileContents.getBytes());
+            outputStream.close();
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
         }
     }
 

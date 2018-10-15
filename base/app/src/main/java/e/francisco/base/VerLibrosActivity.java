@@ -36,11 +36,7 @@ public class VerLibrosActivity extends AppCompatActivity {
         });
     }
 
-    protected void onStart() {
-        super.onStart();
-        System.out.println("estoy onstart");
 
-    }
 
     private String readFromFile(Context context) {
 
@@ -70,6 +66,12 @@ public class VerLibrosActivity extends AppCompatActivity {
         }
 
         return ret;
+    }
+
+    protected void onStart() {
+        super.onStart();
+        System.out.println("config.txt");
+
     }
 
 
