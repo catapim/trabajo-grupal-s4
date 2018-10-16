@@ -35,27 +35,11 @@ public class VerLibrosActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        private String[] Load(File Object file;
-        file) {
-            return new String[0];
-        }
-        
-        String path;
-        File file = new File (path + "libros.txt");
-        String [] loadText = Load(file);
-        String finalString = "";
     }
-
- 
-    
 
 
     protected void onStart() {
         super.onStart();
         System.out.println("config.txt");
     }
-
-
-
 }

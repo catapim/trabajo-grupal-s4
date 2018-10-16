@@ -52,26 +52,21 @@ public class MainActivity extends AppCompatActivity {
                 //autor = input_autor.getText().toString();
               //  publicacion = input_publicacion.getText().toString();
              //   calificacion = input_calificacion.getText().toString();
-                File file = new File (path+"/libros.txt");
-                String[] saveText = String.valueOf(input_titulo.getText().toString()).split(System.getProperty("comma.separator"));
-                input_titulo.setText("");
-                Toast.makeText(getApplicationContext(), "Guardado",Toast.LENGTH_SHORT).show();
-
-                Save (file, saveText);
+              //  File file = new File (path+"/libros.txt");
+              //  String[] saveText = String.valueOf(input_titulo.getText().toString()).split(System.getProperty("comma.separator"));
+                //input_titulo.setText();
+             //   Toast.makeText(getApplicationContext(), "Guardado",Toast.LENGTH_SHORT).show();
             }
         });
 
         btn_ver_libro = (Button) findViewById(R.id.btn_ver_libro);
         btn_ver_libro.setOnClickListener(new View.OnClickListener() {
-
-        @Override
-        public void onClick(View v) {
-            openVerLibrosActivity();
-        }
-    });
+            @Override
+            public void onClick(View v) {
+                openVerLibrosActivity();
+            }
+        });
 }
-
-
 
     private void Save(File file, String[] saveText) {
     }
