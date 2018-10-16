@@ -84,14 +84,16 @@ public class VerLibrosActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         readFromFile(getBaseContext());
+        String[] datos = readFromFile(getBaseContext()).split(",");
+
         added_book = findViewById(R.id.added_book);
-        added_book.setText(readFromFile(getBaseContext()));
+        added_book.setText(datos[0]);
         added_autor = findViewById(R.id.added_autor);
-        added_autor.setText(readFromFile(getBaseContext()));
+        added_autor.setText(datos[1]);
         added_publicacion = findViewById(R.id.added_publicacion);
-        added_publicacion.setText(readFromFile(getBaseContext()));
+        added_publicacion.setText(datos[2]);
         added_calificacion = findViewById(R.id.added_calificacion);
-        added_calificacion.setText(readFromFile(getBaseContext()));
+        added_calificacion.setText(datos[3]);
 
     }
 }
