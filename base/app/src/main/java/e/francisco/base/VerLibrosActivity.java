@@ -45,6 +45,7 @@ public class VerLibrosActivity extends AppCompatActivity {
             InputStream inputStream = context.openFileInput("config.txt");
 
             if ( inputStream != null ) {
+                System.out.println("archivo listo para ser leido");
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String receiveString = "";
@@ -56,6 +57,8 @@ public class VerLibrosActivity extends AppCompatActivity {
 
                 inputStream.close();
                 ret = stringBuilder.toString();
+            } else {
+                System.out.println("no se ha podido leer");
             }
         }
         catch (FileNotFoundException e) {

@@ -30,10 +30,23 @@ public class MainActivity extends AppCompatActivity {
     private Context context;
     private Object Context;
 
+
+    private void writeToFile(String data, Context context) {
+        try {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("config.txt", MainActivity.MODE_PRIVATE));
+            outputStreamWriter.write(data);
+            outputStreamWriter.close();
+        }
+        catch(IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+    }
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registrolibro);
+        final Context context = getBaseContext();
 
         final EditText input_titulo = (EditText) findViewById(R.id.input_titulo);
         final EditText input_autor = (EditText) findViewById(R.id.input_autor);
@@ -54,34 +67,26 @@ public class MainActivity extends AppCompatActivity {
                 autor = input_autor.getText().toString();
                 publicacion = input_publicacion.getText().toString();
                 calificacion = input_calificacion.getText().toString();
+                writeToFile(titulo,getBaseContext());
                 //File file = new File (path+"/libros.txt");
                 //  String[] saveText = String.valueOf(input_titulo.getText().toString()).split(System.getProperty("comma.separator"));
                 //input_titulo.setText();
                 //   Toast.makeText(getApplicationContext(), "Guardado",Toast.LENGTH_SHORT).show();
             }
+
         });
 
         btn_ver_libro = (Button) findViewById(R.id.btn_ver_libro);
-        btn_ver_libro.setOnClickListener(new View.OnClickListener() {@Override
-        public void onClick(View v) {
-            openVerLibrosActivity();
-        }
+        btn_ver_libro.setOnClickListener(new View.OnClickListener() {
+            @Override
+                public void onClick(View v) {
+                openVerLibrosActivity();
+            }
         });
     }
     public void openVerLibrosActivity() {
         Intent intent = new Intent(this, VerLibrosActivity.class);
         startActivity(intent);
-    }
-
-    private void writeToFile(String data, Context context) {
-        try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("config.txt", MainActivity.MODE_PRIVATE));
-            outputStreamWriter.write(data);
-            outputStreamWriter.close();
-        }
-        catch(IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
-        }
     }
 
     private void showToast(String text) {
