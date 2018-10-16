@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
     TextView show_titulo, show_autor, show_publicacion, show_calificacion;
 
     public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/aaBiblioteca";
-    private Context context;
-    private Object Context;
+
 
 
     private void writeToFile(String data, Context context) {

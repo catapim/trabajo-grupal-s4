@@ -26,6 +26,7 @@ public class VerLibrosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ver_libros);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Context context = getBaseContext();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +39,7 @@ public class VerLibrosActivity extends AppCompatActivity {
     }
 
     private String readFromFile(Context context) {
-
+        System.out.println("leyendo archivos");
         String ret = "";
 
         try {
@@ -57,6 +58,7 @@ public class VerLibrosActivity extends AppCompatActivity {
 
                 inputStream.close();
                 ret = stringBuilder.toString();
+                System.out.println(ret);
             } else {
                 System.out.println("no se ha podido leer");
             }
@@ -74,5 +76,6 @@ public class VerLibrosActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         System.out.println("config.txt");
+        readFromFile(getBaseContext());
     }
 }
