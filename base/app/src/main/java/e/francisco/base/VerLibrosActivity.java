@@ -1,5 +1,6 @@
 package e.francisco.base;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.util.Log;
+import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
 
@@ -20,9 +22,13 @@ import java.io.InputStreamReader;
 
 public class VerLibrosActivity extends AppCompatActivity {
 
+    TextView added_book;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_ver_libros);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -72,10 +78,11 @@ public class VerLibrosActivity extends AppCompatActivity {
         return ret;
     }
 
-
     protected void onStart() {
         super.onStart();
-        System.out.println("config.txt");
         readFromFile(getBaseContext());
+        added_book = (TextView) findViewById(R.id.added_book);
+        added_book.setText(readFromFile(getBaseContext()));
+
     }
 }

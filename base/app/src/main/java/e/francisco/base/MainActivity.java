@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/aaBiblioteca";
 
-
-
     private void writeToFile(String data, Context context) {
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("config.txt", MainActivity.MODE_PRIVATE));
