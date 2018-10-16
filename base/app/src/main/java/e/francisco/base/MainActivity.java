@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn_ver_libro;
     TextView show_titulo, show_autor, show_publicacion, show_calificacion;
 
-    public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/aaBiblioteca";
+    //public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/aaBiblioteca";
 
     private void writeToFile(String data, Context context) {
         try {
@@ -53,18 +53,22 @@ public class MainActivity extends AppCompatActivity {
         //show_titulo = (TextView) findViewById(R.id.show_titulo);
         //show_autor = (TextView) findViewById(R.id.show_autor);
         //System.out.println("holap");
-        File dir = new File(path);
-        dir.mkdirs();
+        //File dir = new File(path);
+        //dir.mkdirs();
 
         btn_guardar_libro = (Button) findViewById(R.id.btn_guardar_libro);
         btn_guardar_libro.setOnClickListener(new View.OnClickListener() {
-            private View view;@Override
+            private View view;
+            @Override
             public void onClick(View v) {
                 titulo = input_titulo.getText().toString();
                 autor = input_autor.getText().toString();
                 publicacion = input_publicacion.getText().toString();
                 calificacion = input_calificacion.getText().toString();
                 writeToFile(titulo,getBaseContext());
+                writeToFile(autor,getBaseContext());
+                writeToFile(publicacion,getBaseContext());
+                writeToFile(calificacion,getBaseContext());
                 //File file = new File (path+"/libros.txt");
                 //  String[] saveText = String.valueOf(input_titulo.getText().toString()).split(System.getProperty("comma.separator"));
                 //input_titulo.setText();
@@ -86,13 +90,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void showToast(String text) {
-        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
-        show_titulo.setText(titulo);
-        show_autor.setText(autor);
-        // show_publicacion.setText(publicacion);
-        //show_calificacion.setText(calificacion);
-    }
+//    private void showToast(String text) {
+  //      Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+   // }
 
     private class MODE_PRIVATE {
     }

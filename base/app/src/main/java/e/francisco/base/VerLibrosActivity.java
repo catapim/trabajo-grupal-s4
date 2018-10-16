@@ -23,6 +23,9 @@ import java.io.InputStreamReader;
 public class VerLibrosActivity extends AppCompatActivity {
 
     TextView added_book;
+    TextView added_autor;
+    TextView added_publicacion;
+    TextView added_calificacion;
 
 
     @Override
@@ -81,8 +84,14 @@ public class VerLibrosActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         readFromFile(getBaseContext());
-        added_book = (TextView) findViewById(R.id.added_book);
+        added_book = findViewById(R.id.added_book);
         added_book.setText(readFromFile(getBaseContext()));
+        added_autor = findViewById(R.id.added_autor);
+        added_autor.setText(readFromFile(getBaseContext()));
+        added_publicacion = findViewById(R.id.added_publicacion);
+        added_publicacion.setText(readFromFile(getBaseContext()));
+        added_calificacion = findViewById(R.id.added_calificacion);
+        added_calificacion.setText(readFromFile(getBaseContext()));
 
     }
 }

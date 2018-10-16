@@ -41,4 +41,5 @@
     <string name="texto_bienvenida">Hola, bienvenid@, ingresa tu nombre, registrate, y guarda informacion de tus libros.</string>
     <string name="input_usuario">Ej. Ruben</string>
     <string name="btn_registro">Registrarme</string>
+    <string name="aqui_se_vera_listado_de_libros">aqui se vera listado de libros</string>
 </resources>

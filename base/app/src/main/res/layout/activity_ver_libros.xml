@@ -49,10 +49,22 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="aqui se vera listado de libros" />
+                android:text="@string/aqui_se_vera_listado_de_libros" />
 
             <TextView
                 android:id="@+id/added_book"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/added_autor"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/added_publicacion"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/added_calificacion"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent" />
 
