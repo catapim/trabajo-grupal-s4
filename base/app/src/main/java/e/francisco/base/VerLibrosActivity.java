@@ -12,13 +12,13 @@ import android.util.Log;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class VerLibrosActivity extends AppCompatActivity {
 
@@ -26,6 +26,7 @@ public class VerLibrosActivity extends AppCompatActivity {
     TextView added_autor;
     TextView added_publicacion;
     TextView added_calificacion;
+    ArrayList<String> book_strings=new ArrayList<String>();
 
 
     @Override
@@ -63,6 +64,8 @@ public class VerLibrosActivity extends AppCompatActivity {
 
                 while ( (receiveString = bufferedReader.readLine()) != null ) {
                     stringBuilder.append(receiveString);
+                    System.out.println(receiveString);
+                    book_strings.add(receiveString);
                 }
 
                 inputStream.close();
@@ -84,7 +87,8 @@ public class VerLibrosActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         readFromFile(getBaseContext());
-        String[] datos = readFromFile(getBaseContext()).split(",");
+        // TODO: leer los otros libros que estan en el array book_strings
+        String[] datos = book_strings.get(0).split(",");
 
         added_book = findViewById(R.id.added_book);
         added_book.setText(datos[0]);
